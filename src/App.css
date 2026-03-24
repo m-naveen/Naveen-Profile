@@ -2,25 +2,36 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --bg:        #080810;
-  --bg2:       #0e0e1a;
-  --bg3:       #12121f;
-  --surface:   rgba(255,255,255,0.04);
-  --border:    rgba(255,255,255,0.08);
+  /* Premium Dark Mode Palette */
+  --bg:        #050508;
+  --bg2:       #0a0a0f;
+  --bg3:       #11111a;
+  --surface:   rgba(255, 255, 255, 0.03);
+  --border:    rgba(255, 255, 255, 0.06);
+  --border-hover: rgba(0, 255, 135, 0.3);
+  
+  /* Vibrant Accents */
   --accent:    #00ff87;
+  --accent-hover: #00e077;
   --accent2:   #60a5fa;
-  --accent3:   #f59e0b;
-  --text:      #e8e8f0;
-  --text2:     #9090a8;
-  --text3:     #5a5a70;
-  --font-head: 'Syne', sans-serif;
+  --accent3:   #a855f7;
+  
+  /* Text Colors */
+  --text:      #f3f4f6;
+  --text2:     #9ca3af;
+  --text3:     #6b7280;
+  
+  /* Typography */
+  --font-head: 'Outfit', sans-serif;
+  --font-sans: 'Inter', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
-  --font-serif:'Instrument Serif', serif;
+  
+  /* Utilities */
   --radius:    12px;
-  --radius-lg: 20px;
-  --glow:      0 0 40px rgba(0,255,135,0.15);
-  --shadow:    0 8px 32px rgba(0,0,0,0.5);
-  --transition:0.3s cubic-bezier(0.4,0,0.2,1);
+  --radius-lg: 24px;
+  --glow:      0 0 30px rgba(0, 255, 135, 0.15);
+  --shadow:    0 10px 40px rgba(0, 0, 0, 0.6);
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 html { scroll-behavior: smooth; }
@@ -28,7 +39,7 @@ html { scroll-behavior: smooth; }
 body {
   background: var(--bg);
   color: var(--text);
-  font-family: var(--font-head);
+  font-family: var(--font-sans);
   line-height: 1.6;
   overflow-x: hidden;
 }
