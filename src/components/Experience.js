@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { experience } from "../data/profile";
+import AnimatedSection from "./AnimatedSection";
 import "./Experience.css";
 
 export default function Experience() {
@@ -13,7 +14,8 @@ export default function Experience() {
         <h2 className="section-title">Experience</h2>
         <p className="section-subtitle">// {experience.length} companies · 3.5+ years</p>
 
-        <div className="exp__layout">
+        <AnimatedSection>
+          <div className="exp__layout">
           {/* Tabs */}
           <div className="exp__tabs">
             {experience.map((e, i) => (
@@ -62,7 +64,8 @@ export default function Experience() {
               ))}
             </div>
           </div>
-        </div>
+          </div>
+        </AnimatedSection>
       </div>
     </section>
   );

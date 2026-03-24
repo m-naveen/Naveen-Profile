@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { skills } from "../data/profile";
+import AnimatedSection from "./AnimatedSection";
 import "./Skills.css";
 
 const categories = [
@@ -23,8 +24,9 @@ export default function Skills() {
         <h2 className="section-title">Skills & Technologies</h2>
         <p className="section-subtitle">// {Object.values(skills).flat().length}+ technologies across the stack</p>
 
-        <div className="skills__layout">
-          {/* Sidebar tabs */}
+        <AnimatedSection>
+          <div className="skills__layout">
+            {/* Sidebar tabs */}
           <div className="skills__tabs">
             {categories.map((cat) => (
               <button
@@ -59,7 +61,8 @@ export default function Skills() {
               ))}
             </div>
           </div>
-        </div>
+          </div>
+        </AnimatedSection>
 
         {/* All skills compact bar */}
         <div className="skills__all-label">

@@ -1,5 +1,6 @@
 import React from "react";
 import { projects } from "../data/profile";
+import AnimatedSection from "./AnimatedSection";
 import "./Projects.css";
 
 export default function Projects() {
@@ -12,7 +13,8 @@ export default function Projects() {
 
         <div className="projects__grid">
           {projects.map((proj, i) => (
-            <div className="project-card card" key={i} style={{ "--i": i }}>
+            <AnimatedSection key={i} delay={i * 100}>
+              <div className="project-card card" style={{ "--i": i }}>
               <div className="project-card__top">
                 <span className="project-icon">{proj.icon}</span>
                 <span className="project-period">{proj.period}</span>
@@ -24,13 +26,15 @@ export default function Projects() {
                   <span key={t} className="tag">{t}</span>
                 ))}
               </div>
-            </div>
+              </div>
+            </AnimatedSection>
           ))}
         </div>
 
         {/* Hackathon highlight */}
-        <div className="hackathon-banner">
-          <div className="hackathon-inner">
+        <AnimatedSection delay={200}>
+          <div className="hackathon-banner">
+            <div className="hackathon-inner">
             <div className="hackathon-trophy">🏆</div>
             <div>
               <div className="hackathon-title">Finfactor Hackathon Winner</div>
@@ -44,7 +48,8 @@ export default function Projects() {
               <span>/ 100</span>
             </div>
           </div>
-        </div>
+          </div>
+        </AnimatedSection>
       </div>
     </section>
   );

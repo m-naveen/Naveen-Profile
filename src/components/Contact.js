@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { profile } from "../data/profile";
+import AnimatedSection from "./AnimatedSection";
 import "./Contact.css";
 
 export default function Contact() {
@@ -52,8 +53,9 @@ export default function Contact() {
         <h2 className="section-title">Let's Work <span className="title-grad">Together</span></h2>
         <p className="section-subtitle">// Open to full-time roles, collaborations & interesting projects</p>
 
-        <div className="contact__grid">
-          {/* Info */}
+        <AnimatedSection>
+          <div className="contact__grid">
+            {/* Info */}
           <div className="contact__info">
             <p className="contact__tagline">
               I'm currently open to new opportunities in fintech, distributed systems, or full-stack engineering.
@@ -192,7 +194,8 @@ export default function Contact() {
               )}
             </button>
           </form>
-        </div>
+          </div>
+        </AnimatedSection>
       </div>
     </section>
   );

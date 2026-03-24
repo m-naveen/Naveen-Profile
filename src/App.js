@@ -15,6 +15,7 @@ function App() {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
+    // Scroll handling for active section
     const handleScroll = () => {
       setScrolled(window.scrollY > 60);
       const sections = ["hero", "about", "skills", "experience", "projects", "achievements", "contact"];
@@ -30,7 +31,18 @@ function App() {
       }
     };
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+
+    // Mouse tracking for premium floating spot light effect
+    const handleMouseMove = (e) => {
+      document.documentElement.style.setProperty("--mouse-x", `${e.clientX}px`);
+      document.documentElement.style.setProperty("--mouse-y", `${e.clientY}px`);
+    };
+    window.addEventListener("mousemove", handleMouseMove);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("mousemove", handleMouseMove);
+    };
   }, []);
 
   return (

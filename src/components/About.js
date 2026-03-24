@@ -1,12 +1,14 @@
 import React from "react";
 import { profile } from "../data/profile";
+import AnimatedSection from "./AnimatedSection";
 import "./About.css";
 
 export default function About() {
   return (
     <section id="about">
       <div className="section-wrap">
-        <div className="about__grid">
+        <AnimatedSection>
+          <div className="about__grid">
           <div className="about__left">
             <p className="section-label">About Me</p>
             <h2 className="section-title">Passionate about<br /><span className="title-accent">Scalable Systems</span></h2>
@@ -74,6 +76,7 @@ export default function About() {
             </div>
           </div>
         </div>
+        </AnimatedSection>
       </div>
     </section>
   );
