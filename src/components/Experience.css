@@ -1,0 +1,56 @@
+.exp__layout {
+  display: grid; grid-template-columns: 280px 1fr; gap: 24px;
+}
+.exp__tabs { display: flex; flex-direction: column; gap: 8px; }
+
+.exp-tab {
+  display: flex; align-items: center; gap: 14px;
+  background: none; border: 1px solid var(--border); cursor: pointer;
+  padding: 16px; border-radius: var(--radius); text-align: left;
+  transition: all var(--transition);
+}
+.exp-tab:hover { background: var(--surface); border-color: rgba(255,255,255,0.15); }
+.exp-tab--active {
+  background: rgba(255,255,255,0.05);
+  border-color: var(--exp-color);
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+.exp-tab__dot {
+  width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0;
+}
+.exp-tab__company { font-size: 13px; font-weight: 700; color: var(--text); margin-bottom: 3px; }
+.exp-tab__period { font-family: var(--font-mono); font-size: 11px; color: var(--text3); }
+
+/* Panel */
+.exp__panel {
+  animation: fadeIn 0.3s ease;
+  border-color: rgba(var(--exp-color), 0.2);
+}
+.exp__panel:hover { transform: none; }
+
+.exp-panel__header { margin-bottom: 28px; }
+.exp-panel__role { font-size: 22px; font-weight: 800; color: var(--text); margin-bottom: 4px; }
+.exp-panel__company { font-size: 16px; font-weight: 600; margin-bottom: 12px; }
+.exp-panel__meta {
+  display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+  font-family: var(--font-mono); font-size: 12px; color: var(--text2);
+}
+
+.exp-panel__points { list-style: none; margin-bottom: 28px; display: flex; flex-direction: column; gap: 12px; }
+.exp-point {
+  display: flex; gap: 12px; align-items: flex-start;
+  font-size: 14px; color: var(--text2); line-height: 1.65;
+}
+.exp-point__dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  flex-shrink: 0; margin-top: 7px;
+}
+
+.exp-panel__tech { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; padding-top: 20px; border-top: 1px solid var(--border); }
+.tech-label { font-family: var(--font-mono); font-size: 11px; color: var(--text3); margin-right: 4px; }
+
+@media (max-width: 900px) {
+  .exp__layout { grid-template-columns: 1fr; }
+  .exp__tabs { flex-direction: row; overflow-x: auto; padding-bottom: 8px; }
+  .exp-tab { min-width: 180px; }
+}

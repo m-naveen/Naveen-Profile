@@ -1,0 +1,182 @@
+.hero {
+  position: relative; min-height: 100vh;
+  display: flex; align-items: center;
+  padding: 100px 32px 60px;
+  overflow: hidden;
+}
+
+/* Ambient blobs */
+.hero__blob {
+  position: absolute; border-radius: 50%;
+  filter: blur(80px); pointer-events: none; opacity: 0.15;
+}
+.hero__blob--1 {
+  width: 500px; height: 500px;
+  background: var(--accent); top: -100px; right: 10%;
+  animation: float 8s ease-in-out infinite;
+}
+.hero__blob--2 {
+  width: 350px; height: 350px;
+  background: var(--accent2); bottom: 10%; left: -50px;
+  animation: float 10s ease-in-out infinite 2s;
+}
+.hero__blob--3 {
+  width: 280px; height: 280px;
+  background: var(--accent3); top: 40%; right: 30%;
+  animation: float 12s ease-in-out infinite 4s; opacity: 0.08;
+}
+
+.hero__inner {
+  max-width: 1200px; margin: 0 auto; width: 100%;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+}
+
+/* ── Left ── */
+.hero__badge {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: var(--font-mono); font-size: 12px;
+  color: var(--accent); background: rgba(0,255,135,0.08);
+  border: 1px solid rgba(0,255,135,0.2);
+  padding: 8px 16px; border-radius: 100px;
+  margin-bottom: 28px;
+}
+.badge-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--accent); animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.hero__name {
+  font-family: var(--font-head);
+  line-height: 1.0; margin-bottom: 20px;
+}
+.name-hi {
+  font-size: clamp(14px, 2vw, 18px); font-weight: 400;
+  color: var(--text2); letter-spacing: 0.1em; font-family: var(--font-mono);
+}
+.name-main {
+  font-size: clamp(2.8rem, 5.5vw, 4.5rem); font-weight: 800;
+  color: var(--text); display: block; line-height: 1.05;
+}
+.name-accent {
+  font-size: clamp(2.8rem, 5.5vw, 4.5rem); font-weight: 800;
+  display: block; line-height: 1.05;
+  background: linear-gradient(135deg, var(--accent), #00c9ff);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+
+.hero__role {
+  font-family: var(--font-mono); font-size: clamp(14px, 2vw, 18px);
+  color: var(--text2); margin-bottom: 24px; min-height: 28px;
+}
+.role-prefix { color: var(--accent); }
+.role-text { color: var(--accent2); }
+.cursor {
+  color: var(--accent); animation: blink 1s ease-in-out infinite;
+  font-weight: 300;
+}
+
+.hero__summary {
+  font-size: 15px; color: var(--text2); line-height: 1.7;
+  max-width: 500px; margin-bottom: 36px;
+}
+.hero__summary em { color: var(--text); font-style: normal; font-weight: 600; }
+
+.hero__stats {
+  display: flex; gap: 0; margin-bottom: 36px;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); overflow: hidden; width: fit-content;
+}
+.stat-item {
+  padding: 16px 20px; display: flex; flex-direction: column; align-items: center;
+  border-right: 1px solid var(--border);
+}
+.stat-item:last-child { border-right: none; }
+.stat-value { font-size: 22px; font-weight: 800; color: var(--accent); line-height: 1; }
+.stat-label { font-family: var(--font-mono); font-size: 10px; color: var(--text3); margin-top: 4px; white-space: nowrap; }
+
+.hero__actions { display: flex; gap: 12px; flex-wrap: wrap; }
+
+/* ── Right ── */
+.hero__right {
+  display: flex; flex-direction: column; align-items: center; gap: 32px;
+}
+
+.hero__avatar-wrap {
+  position: relative; width: 280px; height: 280px;
+}
+.avatar-ring {
+  position: absolute; border-radius: 50%;
+  border: 1px dashed rgba(0,255,135,0.3);
+  animation: spin-slow 20s linear infinite;
+}
+.avatar-ring--outer { inset: -24px; }
+.avatar-ring--inner { inset: -12px; animation-direction: reverse; animation-duration: 15s; }
+
+.hero__avatar {
+  width: 100%; height: 100%; border-radius: 50%;
+  border: 3px solid var(--accent);
+  box-shadow: 0 0 0 8px rgba(0,255,135,0.06), var(--glow);
+  overflow: hidden; display: flex; align-items: center; justify-content: center;
+  background: var(--bg3);
+}
+.hero__avatar img { width: 100%; height: 100%; object-fit: cover; }
+.avatar-fallback {
+  display: none; font-size: 56px; font-weight: 800;
+  color: var(--accent); background: linear-gradient(135deg, rgba(0,255,135,0.1), rgba(96,165,250,0.1));
+  width: 100%; height: 100%; align-items: center; justify-content: center;
+}
+
+.avatar-badge {
+  position: absolute;
+  font-family: var(--font-mono); font-size: 11px; font-weight: 500;
+  background: var(--bg2); border: 1px solid var(--border);
+  border-radius: 8px; padding: 8px 12px;
+  display: flex; flex-direction: column; gap: 2px;
+  box-shadow: var(--shadow); color: var(--text);
+}
+.avatar-badge span:first-child { color: var(--accent2); font-weight: 600; }
+.avatar-badge--iit { top: 16px; right: -24px; }
+.avatar-badge--pune { bottom: 24px; left: -24px; }
+
+.tech-orbit {
+  display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; max-width: 320px;
+}
+.tech-pill {
+  font-family: var(--font-mono); font-size: 12px; font-weight: 500;
+  padding: 8px 16px; border-radius: 100px;
+  background: var(--surface); border: 1px solid var(--border);
+  color: var(--text2); animation: float calc(4s + var(--i) * 1s) ease-in-out infinite;
+  animation-delay: var(--delay); transition: all var(--transition);
+}
+.tech-pill:hover { border-color: var(--accent); color: var(--accent); }
+
+/* ── Scroll hint ── */
+.hero__scroll {
+  position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.15em;
+  text-transform: uppercase; color: var(--text3); animation: fadeIn 1s 1s both;
+}
+.scroll-line {
+  width: 1px; height: 40px;
+  background: linear-gradient(to bottom, transparent, var(--text3));
+  animation: float 2s ease-in-out infinite;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .hero__inner { grid-template-columns: 1fr; text-align: center; gap: 40px; }
+  .hero__right { order: -1; }
+  .hero__summary { margin: 0 auto 36px; }
+  .hero__actions { justify-content: center; }
+  .hero__stats { margin: 0 auto 36px; }
+  .hero__badge { margin: 0 auto 28px; }
+  .avatar-badge--iit { right: -8px; }
+  .avatar-badge--pune { left: -8px; }
+}
+@media (max-width: 480px) {
+  .hero { padding: 90px 20px 60px; }
+  .hero__avatar-wrap { width: 220px; height: 220px; }
+  .hero__stats { flex-wrap: wrap; }
+  .stat-item { padding: 12px 16px; }
+}

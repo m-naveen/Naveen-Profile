@@ -1,0 +1,55 @@
+.about__grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start;
+}
+.title-accent {
+  background: linear-gradient(135deg, var(--accent), #00c9ff);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.about__text {
+  font-size: 15px; color: var(--text2); line-height: 1.8; margin-bottom: 20px;
+}
+.about__text strong { color: var(--text); font-weight: 600; }
+
+.about__contacts { display: flex; flex-direction: column; gap: 10px; margin-top: 32px; }
+.contact-chip {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: var(--font-mono); font-size: 13px;
+  color: var(--text2); text-decoration: none;
+  padding: 10px 16px; border-radius: 8px;
+  background: var(--surface); border: 1px solid var(--border);
+  transition: all var(--transition); width: fit-content;
+}
+.contact-chip svg { color: var(--accent); flex-shrink: 0; }
+.contact-chip:hover { color: var(--accent); border-color: rgba(0,255,135,0.3); }
+
+/* ── Right ── */
+.about__interests {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 20px;
+}
+.interest-card {
+  display: flex; align-items: flex-start; gap: 14px; padding: 18px;
+}
+.interest-icon { font-size: 22px; flex-shrink: 0; margin-top: 2px; }
+.interest-title { font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+.interest-desc { font-family: var(--font-mono); font-size: 11px; color: var(--text3); line-height: 1.5; }
+
+.about__education { padding: 20px 24px; }
+.edu-label {
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.15em;
+  text-transform: uppercase; color: var(--accent); margin-bottom: 16px;
+}
+.edu-item { display: flex; gap: 16px; align-items: flex-start; }
+.edu-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--accent); flex-shrink: 0; margin-top: 6px;
+}
+.edu-degree { font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+.edu-school { font-size: 13px; color: var(--accent2); margin-bottom: 3px; }
+.edu-year { font-family: var(--font-mono); font-size: 12px; color: var(--text3); }
+
+@media (max-width: 900px) {
+  .about__grid { grid-template-columns: 1fr; gap: 48px; }
+}
+@media (max-width: 600px) {
+  .about__interests { grid-template-columns: 1fr; }
+}
