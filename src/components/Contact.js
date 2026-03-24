@@ -13,14 +13,8 @@ export default function Contact() {
     e.preventDefault();
     setLoading(true);
 
-    // Get your free access key from https://web3forms.com/
-    const accessKey = "YOUR_WEB3FORMS_ACCESS_KEY";
-
-    if (accessKey === "YOUR_WEB3FORMS_ACCESS_KEY") {
-      alert("Please enter a free Web3Forms Access Key in Contact.js to receive emails.");
-      setLoading(false);
-      return;
-    }
+    // Web3Forms Access Key
+    const accessKey = "f3af5b02-b834-42ae-924c-3c3e5e91d68c";
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
